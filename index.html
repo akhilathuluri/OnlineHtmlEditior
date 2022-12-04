@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Code Editior</title>
+
+
+</head>
+<body>
+    <div class="btn">
+        <button>Run</button>
+    </div>
+    <div class="box">
+        <textarea class="input"></textarea>
+        <iframe class="output"></iframe>
+    </div>
+
+    <script>
+        let input = document.querySelector('.input');
+        let output = document.querySelector('.output');
+        let btnEle = document.querySelector('button')
+
+        btnEle.onclick = execute;
+
+        function execute() {
+            let code = input.value;
+            output.contentWindow.document.body.innerHTML = "";
+            output.contentWindow.document.write(code)
+        }
+
+    </script>
+</body>
+</html>
